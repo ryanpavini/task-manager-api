@@ -1,6 +1,6 @@
 # 📝 Task Manager API
 
-Uma API RESTful robusta para gerenciamento de tarefas (To-Do List), desenvolvida com **Java 17**, **Spring Boot**, **Spring Security**, **JWT** e **PostgreSQL**. O projeto aplica as melhores práticas de desenvolvimento para criar uma aplicação segura, escalável e bem documentada.
+Uma API RESTful robusta para gerenciamento de tarefas (To-Do List), desenvolvida com **Java 24.0.2"**, **Spring Boot**, **Spring Security**, **JWT** e **PostgreSQL**. O projeto aplica as melhores práticas de desenvolvimento para criar uma aplicação segura, escalável e bem documentada.
 
 ![Java](https://img.shields.io/badge/Java-17+-red)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen)
@@ -22,7 +22,7 @@ Uma API RESTful robusta para gerenciamento de tarefas (To-Do List), desenvolvida
 
 ## ⚙️ Tecnologias Utilizadas
 
-- **Linguagem:** Java 17+
+- **Linguagem:** Java 24+
 - **Frameworks:** Spring Boot, Spring Data JPA, Spring Security
 - **Banco de Dados:** PostgreSQL
 - **Segurança:** JSON Web Tokens (JWT)
@@ -35,7 +35,7 @@ Uma API RESTful robusta para gerenciamento de tarefas (To-Do List), desenvolvida
 
 ### ✅ Pré-requisitos
 
-- JDK 17+
+- JDK 24+
 - Maven
 - PostgreSQL
 
@@ -136,8 +136,8 @@ Contribuições são bem-vindas! Para reportar problemas ou sugerir melhorias:
 
 ## 👤 Autor
 
-**Seu Nome**  
-[LinkedIn](https://www.linkedin.com/in/seu-perfil) | [GitHub](https://github.com/seu-usuario)
+**Ryan Pavini**  
+[LinkedIn](https://www.linkedin.com/in/ryan-pavini/)
 
 ---
 
