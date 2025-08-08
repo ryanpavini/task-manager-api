@@ -2,7 +2,7 @@
 
 Uma API RESTful robusta para gerenciamento de tarefas (To-Do List), desenvolvida com **Java 24.0.2"**, **Spring Boot**, **Spring Security**, **JWT** e **PostgreSQL**. O projeto aplica as melhores práticas de desenvolvimento para criar uma aplicação segura, escalável e bem documentada.
 
-![Java]([https://img.shields.io/badge/Java-17+-red](https://www.oracle.com/br/java/technologies/downloads/))
+![Java](![Java](https://img.shields.io/badge/Java‑24-red)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-%234169E1.svg?&logo=postgresql&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
