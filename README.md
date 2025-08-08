@@ -1,117 +1,146 @@
-Task Manager API
-Uma API RESTful completa para gerenciar tarefas (To-Do List), construída com Java, Spring Boot, Spring Security, PostgreSQL e JWT para autenticação. Este projeto serve como um exemplo de uma aplicação back-end robusta e segura, utilizando as melhores práticas de desenvolvimento.
+# 📝 Task Manager API
 
-🚀 Funcionalidades
-CRUD de Tarefas: Crie, visualize, atualize e exclua tarefas.
+Uma API RESTful robusta para gerenciamento de tarefas (To-Do List), desenvolvida com **Java 17**, **Spring Boot**, **Spring Security**, **JWT** e **PostgreSQL**. O projeto aplica as melhores práticas de desenvolvimento para criar uma aplicação segura, escalável e bem documentada.
 
-Autenticação Segura: Registro e login de usuários com JSON Web Tokens (JWT).
+![Java](https://img.shields.io/badge/Java-17+-red)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-%234169E1.svg?&logo=postgresql&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-Autorização por Usuário: Cada usuário só pode gerenciar suas próprias tarefas, garantindo segurança e privacidade.
+---
 
-Filtros de Tarefas: Filtre tarefas por status (PENDING, COMPLETED, OVERDUE).
+## 🚀 Funcionalidades
 
-Validação de Dados: Validação de campos de entrada (tamanho do título, datas) para garantir a integridade dos dados.
+- ✅ **CRUD de Tarefas**: Crie, visualize, atualize e exclua tarefas.
+- 🔐 **Autenticação JWT**: Registro e login de usuários com tokens seguros.
+- 🔒 **Autorização Individual**: Cada usuário só acessa suas próprias tarefas.
+- 🔎 **Filtros de Tarefas**: Filtragem por status (`PENDING`, `COMPLETED`, `OVERDUE`).
+- 🧾 **Validação de Dados**: Campos validados para garantir integridade.
+- 📄 **Documentação Interativa**: Swagger/OpenAPI para explorar e testar endpoints.
 
-Documentação Interativa: Use o Swagger/OpenAPI para explorar, testar e entender todos os endpoints da API de forma interativa.
+---
 
-⚙️ Tecnologias Utilizadas
-Backend: Java 17+, Spring Boot 3.x
+## ⚙️ Tecnologias Utilizadas
 
-Frameworks: Spring Data JPA, Spring Security
+- **Linguagem:** Java 17+
+- **Frameworks:** Spring Boot, Spring Data JPA, Spring Security
+- **Banco de Dados:** PostgreSQL
+- **Segurança:** JSON Web Tokens (JWT)
+- **Documentação:** Swagger (via `springdoc-openapi`)
+- **Build Tool:** Maven
 
-Banco de Dados: PostgreSQL
+---
 
-Segurança: JWT (JSON Web Tokens)
+## 📋 Como Rodar o Projeto
 
-Documentação: Swagger/OpenAPI (springdoc-openapi)
+### ✅ Pré-requisitos
 
-Build: Maven
+- JDK 17+
+- Maven
+- PostgreSQL
 
-📋 Como Configurar e Rodar o Projeto
-Pré-requisitos
-Certifique-se de ter instalado:
+### 🔽 1. Clonar o Repositório
 
-JDK 17 ou superior
-
-Maven
-
-PostgreSQL
-
-1. Clonar o Repositório
-Bash
-
+```bash
 git clone https://github.com/seu-usuario/task-manager-api.git
 cd task-manager-api
-2. Configurar o Banco de Dados
-Crie um banco de dados no PostgreSQL com o nome taskmanagerdb.
+```
 
-Abra o arquivo src/main/resources/application.properties e configure as credenciais do seu banco de dados:
+### 🛠️ 2. Configurar o Banco de Dados
 
-Properties
+1. Crie um banco chamado `taskmanagerdb` no PostgreSQL.
+2. Configure o arquivo `src/main/resources/application.properties`:
 
+```properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/taskmanagerdb
 spring.datasource.username=seu_usuario
 spring.datasource.password=sua_senha
 spring.datasource.driver-class-name=org.postgresql.Driver
 spring.jpa.hibernate.ddl-auto=update
-Aviso: O ddl-auto=update é ideal para desenvolvimento, mas em produção, considere usar validate e gerenciar as migrações com ferramentas como Flyway ou Liquibase.
+```
 
-3. Executar a Aplicação
-Execute a classe principal TaskManagerApiApplication.java a partir da sua IDE, ou use o Maven via linha de comando:
+> ⚠️ Em produção, substitua `ddl-auto=update` por `validate` e use ferramentas como Flyway ou Liquibase.
 
-Bash
+### ▶️ 3. Executar a Aplicação
 
+Pela linha de comando:
+
+```bash
 ./mvnw spring-boot:run
-A API estará rodando em http://localhost:8080.
+```
 
-📖 Documentação da API (Swagger)
-A documentação interativa, gerada pelo Swagger, está disponível em:
+Ou execute a classe `TaskManagerApiApplication.java` pela sua IDE.
 
-URL: http://localhost:8080/swagger-ui.html
+A API estará disponível em: [http://localhost:8080](http://localhost:8080)
 
-Nesta interface, você pode ver todos os endpoints, modelos de dados e testar as requisições diretamente.
+---
 
-🔑 Autenticação e Uso da API
-Todos os endpoints de tarefas são protegidos por JWT. Siga estes passos para usá-los:
+## 📖 Documentação com Swagger
 
-Registrar um Usuário
+Acesse a documentação interativa gerada automaticamente:
 
-Endpoint: POST /api/auth/register
+📎 URL: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 
-Body:
+---
 
-JSON
+## 🔑 Autenticação JWT
 
+### 📝 Registrar Usuário
+
+**POST** `/api/auth/register`
+
+```json
 {
   "username": "meu_usuario",
   "password": "minha_senha"
 }
-Fazer Login e Obter o Token
+```
 
-Endpoint: POST /api/auth/login
+### 🔐 Fazer Login
 
-Body:
+**POST** `/api/auth/login`
 
-JSON
-
+```json
 {
   "username": "meu_usuario",
   "password": "minha_senha"
 }
-Resposta:
+```
 
-JSON
+**Resposta:**
 
+```json
 {
   "token": "seu_token_jwt_aqui..."
 }
-Usar o Token para Acessar Endpoints Protegidos
+```
 
-Para qualquer endpoint em /api/tasks, inclua o cabeçalho Authorization com o token.
+### 📌 Acessar Endpoints Protegidos
 
-Header: Authorization: Bearer seu_token_jwt_aqui...
+Adicione o token no cabeçalho:
 
-👨‍💻 Contribuições
-Contribuições são bem-vindas! Se você encontrar bugs ou tiver sugestões de melhoria, sinta-se à vontade para abrir uma issue ou um pull request.
+```
+Authorization: Bearer seu_token_jwt_aqui...
+```
 
-Autor: Seu Nome
+---
+
+## 👨‍💻 Contribuições
+
+Contribuições são bem-vindas! Para reportar problemas ou sugerir melhorias:
+
+- Abra uma **issue**
+- Envie um **pull request**
+
+---
+
+## 👤 Autor
+
+**Seu Nome**  
+[LinkedIn](https://www.linkedin.com/in/seu-perfil) | [GitHub](https://github.com/seu-usuario)
+
+---
+
+## 📝 Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
