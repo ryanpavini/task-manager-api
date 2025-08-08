@@ -139,7 +139,3 @@ Contribuições são bem-vindas! Para reportar problemas ou sugerir melhorias:
 [LinkedIn](https://www.linkedin.com/in/ryan-pavini/)
 
 ---
-
-## 📝 Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE).
